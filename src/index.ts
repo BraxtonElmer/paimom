@@ -1,4 +1,4 @@
-import { Client, Collection, GatewayIntentBits, Partials, ChatInputCommandInteraction, ButtonInteraction, ModalSubmitInteraction, AutocompleteInteraction } from 'discord.js';
+import { Client, Collection, GatewayIntentBits, Partials, ChatInputCommandInteraction, ButtonInteraction, ModalSubmitInteraction, AutocompleteInteraction, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } from 'discord.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { readdirSync } from 'fs';
@@ -19,6 +19,7 @@ interface Command {
   };
   execute: (interaction: ChatInputCommandInteraction) => Promise<void>;
   autocomplete?: (interaction: AutocompleteInteraction) => Promise<void>;
+  generateHelpEmbed?: (category: string) => any;
 }
 
 interface ExtendedClient extends Client {
@@ -118,10 +119,70 @@ client.on('interactionCreate', async (interaction) => {
       
       await command.autocomplete(interaction as AutocompleteInteraction);
     } else if (interaction.isButton()) {
+      // Handle help back button
+      if (interaction.customId === 'help_back_to_main') {
+        const helpCommand = client.commands.get('help');
+        if (helpCommand && helpCommand.generateHelpEmbed) {
+          const embed = helpCommand.generateHelpEmbed('overview');
+          
+          const selectMenu = new StringSelectMenuBuilder()
+            .setCustomId('help_category_select')
+            .setPlaceholder('Choose a category')
+            .addOptions([
+              {
+                label: 'Server & Notifications',
+                description: '7 commands',
+                value: 'server',
+              },
+              {
+                label: 'Character Builds',
+                description: '8 commands',
+                value: 'builds',
+              },
+              {
+                label: 'Task Management',
+                description: '4 commands',
+                value: 'todo',
+              },
+              {
+                label: 'Domains & Resin',
+                description: '5 commands',
+                value: 'domains',
+              },
+              {
+                label: 'All Commands',
+                description: 'View all 26 commands',
+                value: 'all',
+              },
+            ]);
+
+          const row = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(selectMenu);
+          await interaction.update({ embeds: [embed], components: [row] });
+          return;
+        }
+      }
+      
       const customIdPrefix = interaction.customId.split('_')[0];
       const button = client.buttons.get(customIdPrefix);
       if (button) {
         await button.execute(interaction as ButtonInteraction);
+      }
+    } else if (interaction.isStringSelectMenu()) {
+      // Handle help category dropdown
+      if (interaction.customId === 'help_category_select') {
+        const helpCommand = client.commands.get('help');
+        if (helpCommand && helpCommand.generateHelpEmbed) {
+          const category = interaction.values[0];
+          const embed = helpCommand.generateHelpEmbed(category);
+          
+          const backButton = new ButtonBuilder()
+            .setCustomId('help_back_to_main')
+            .setLabel('Back to Main Menu')
+            .setStyle(ButtonStyle.Secondary);
+
+          const row = new ActionRowBuilder<ButtonBuilder>().addComponents(backButton);
+          await interaction.update({ embeds: [embed], components: [row] });
+        }
       }
     } else if (interaction.isModalSubmit()) {
       const modal = client.modals.get(interaction.customId);
