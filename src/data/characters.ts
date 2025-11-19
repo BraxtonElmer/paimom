@@ -75,9 +75,9 @@ export const characters: CharactersMap = {
       'White Tassel',
     ],
     teams: [
-      ['Arlecchino', 'Yelan', 'Zhongli', 'Kazuha'],
-      ['Arlecchino', 'Bennett', 'Xingqiu', 'Sucrose'],
-      ['Arlecchino', 'Fischl', 'Beidou', 'Zhongli'],
+      ['Arlecchino', 'Furina', 'Bennett', 'Xilonen'],
+      ['Arlecchino', 'Citlali', 'Bennett', 'Xilonen'],
+      ['Arlecchino', 'Fischl', 'Chevreuse', 'Bennett'],
     ],
   },
   lyney: {
@@ -299,8 +299,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Gaming', 'Bennett', 'Furina', 'Xianyun'],
+      ['Gaming', 'Xingqiu', 'Bennett', 'Xianyun'],
       ['Gaming', 'Xiangling', 'Bennett', 'Kazuha'],
-      ['Gaming', 'Xingqiu', 'Bennett', 'Sucrose'],
     ],
   },
   chevreuse: {
@@ -335,9 +335,9 @@ export const characters: CharactersMap = {
       'Black Tassel',
     ],
     teams: [
-      ['Chevreuse', 'Raiden Shogun', 'Yae Miko', 'Bennett'],
+      ['Chevreuse', 'Raiden Shogun', 'Bennett', 'Xiangling'],
       ['Chevreuse', 'Arlecchino', 'Fischl', 'Bennett'],
-      ['Chevreuse', 'Lyney', 'Fischl', 'Bennett'],
+      ['Chevreuse', 'Clorinde', 'Bennett', 'Xiangling'],
     ],
   },
   bennett: {
@@ -374,7 +374,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Bennett', 'Xiangling', 'Xingqiu', 'Kazuha'],
       ['Bennett', 'Furina', 'Xianyun', 'Gaming'],
-      ['Bennett', 'Raiden Shogun', 'Xiangling', 'Xingqiu'],
+      ['Bennett', 'Arlecchino', 'Kazuha', 'Zhongli'],
     ],
   },
   xiangling: {
@@ -411,7 +411,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Xiangling', 'Bennett', 'Xingqiu', 'Kazuha'],
       ['Xiangling', 'Bennett', 'Raiden Shogun', 'Xingqiu'],
-      ['Xiangling', 'Bennett', 'Furina', 'Kazuha'],
+      ['Xiangling', 'Bennett', 'Tartaglia', 'Kazuha'],
     ],
   },
   yanfei: {
@@ -447,8 +447,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Yanfei', 'Xingqiu', 'Bennett', 'Sucrose'],
+      ['Yanfei', 'Furina', 'Yelan', 'Kazuha'],
       ['Yanfei', 'Yelan', 'Zhongli', 'Kazuha'],
-      ['Yanfei', 'Furina', 'Bennett', 'Kazuha'],
     ],
   },
   xinyan: {
@@ -704,9 +704,9 @@ export const characters: CharactersMap = {
       'Prototype Amber',
     ],
     teams: [
-      ['Neuvillette', 'Furina', 'Kazuha', 'Zhongli'],
-      ['Neuvillette', 'Fischl', 'Nahida', 'Baizhu'],
-      ['Neuvillette', 'Xiangling', 'Bennett', 'Sucrose'],
+      ['Neuvillette', 'Furina', 'Kazuha', 'Xilonen'],
+      ['Neuvillette', 'Furina', 'Nahida', 'Raiden Shogun'],
+      ['Neuvillette', 'Ororon', 'Furina', 'Xilonen'],
     ],
   },
   furina: {
@@ -741,10 +741,9 @@ export const characters: CharactersMap = {
       'Key of Khaj-Nisut',
     ],
     teams: [
-      ['Furina', 'Neuvillette', 'Kazuha', 'Baizhu'],
-      ['Furina', 'Hu Tao', 'Xianyun', 'Zhongli'],
-      ['Furina', 'Arlecchino', 'Bennett', 'Sucrose'],
-      ['Furina', 'Xiao', 'Faruzan', 'Jean'],
+      ['Furina', 'Neuvillette', 'Kazuha', 'Xilonen'],
+      ['Furina', 'Clorinde', 'Nahida', 'Baizhu'],
+      ['Furina', 'Mavuika', 'Xilonen', 'Bennett'],
     ],
   },
   nilou: {
@@ -853,8 +852,8 @@ export const characters: CharactersMap = {
       'Favonius Warbow',
     ],
     teams: [
-      ['Yelan', 'Hu Tao', 'Zhongli', 'Albedo'],
-      ['Yelan', 'Xingqiu', 'Nahida', 'Kuki Shinobu'],
+      ['Yelan', 'Hu Tao', 'Xingqiu', 'Zhongli'],
+      ['Yelan', 'Furina', 'Neuvillette', 'Xilonen'],
       ['Yelan', 'Raiden Shogun', 'Xiangling', 'Bennett'],
     ],
   },
@@ -890,8 +889,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Tartaglia', 'Xiangling', 'Bennett', 'Kazuha'],
-      ['Tartaglia', 'Fischl', 'Beidou', 'Jean'],
-      ['Tartaglia', 'Furina', 'Kazuha', 'Bennett'],
+      ['Tartaglia', 'Furina', 'Xilonen', 'Bennett'],
+      ['Tartaglia', 'Fischl', 'Beidou', 'Kazuha'],
     ],
   },
   kokomi: {
@@ -926,10 +925,9 @@ export const characters: CharactersMap = {
       'Hakushin Ring',
     ],
     teams: [
-      ['Kokomi', 'Fischl', 'Beidou', 'Sucrose'],
-      ['Kokomi', 'Nilou', 'Nahida', 'Collei'],
-      ['Kokomi', 'Ayaka', 'Shenhe', 'Kazuha'],
       ['Kokomi', 'Furina', 'Fischl', 'Nahida'],
+      ['Kokomi', 'Nilou', 'Nahida', 'Yaoyao'],
+      ['Kokomi', 'Ayaka', 'Shenhe', 'Kazuha'],
     ],
   },
   mona: {
@@ -964,9 +962,9 @@ export const characters: CharactersMap = {
       'Favonius Codex',
     ],
     teams: [
-      ['Mona', 'Ayaka', 'Diona', 'Kazuha'],
-      ['Mona', 'Bennett', 'Xiangling', 'Sucrose'],
-      ['Mona', 'Furina', 'Fischl', 'Nahida'],
+      ['Mona', 'Ayaka', 'Shenhe', 'Kazuha'],
+      ['Mona', 'Furina', 'Bennett', 'Xiangling'],
+      ['Mona', 'Ganyu', 'Diona', 'Venti'],
     ],
   },
 
@@ -1074,8 +1072,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Xingqiu', 'Hu Tao', 'Yelan', 'Zhongli'],
+      ['Xingqiu', 'Furina', 'Neuvillette', 'Xilonen'],
       ['Xingqiu', 'Raiden Shogun', 'Xiangling', 'Bennett'],
-      ['Xingqiu', 'Nahida', 'Kuki Shinobu', 'Sucrose'],
     ],
   },
   mualani: {
@@ -1297,8 +1295,9 @@ export const characters: CharactersMap = {
       'Skyward Atlas',
     ],
     teams: [
+      ['Wanderer', 'Faruzan', 'Furina', 'Xianyun'],
       ['Wanderer', 'Faruzan', 'Bennett', 'Zhongli'],
-      ['Wanderer', 'Faruzan', 'Furina', 'Jean'],
+      ['Wanderer', 'Fischl', 'Beidou', 'Jean'],
     ],
   },
   xianyun: {
@@ -1335,7 +1334,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Xianyun', 'Gaming', 'Bennett', 'Furina'],
       ['Xianyun', 'Xiao', 'Furina', 'Faruzan'],
-      ['Xianyun', 'Hu Tao', 'Furina', 'Zhongli'],
+      ['Xianyun', 'Diluc', 'Furina', 'Bennett'],
     ],
   },
   xiao: {
@@ -1406,9 +1405,9 @@ export const characters: CharactersMap = {
       'Windblume Ode',
     ],
     teams: [
-      ['Venti', 'Ganyu', 'Mona', 'Diona'],
       ['Venti', 'Ayaka', 'Kokomi', 'Shenhe'],
-      ['Venti', 'Nahida', 'Fischl', 'Kokomi'],
+      ['Venti', 'Ganyu', 'Mona', 'Diona'],
+      ['Venti', 'Furina', 'Fischl', 'Nahida'],
     ],
   },
   jean: {
@@ -1478,9 +1477,9 @@ export const characters: CharactersMap = {
       'Xiphos\' Moonlight',
     ],
     teams: [
+      ['Kazuha', 'Neuvillette', 'Furina', 'Xilonen'],
       ['Kazuha', 'Bennett', 'Xiangling', 'Xingqiu'],
       ['Kazuha', 'Raiden Shogun', 'Bennett', 'Sara'],
-      ['Kazuha', 'Furina', 'Neuvillette', 'Baizhu'],
     ],
   },
 
@@ -1694,9 +1693,9 @@ export const characters: CharactersMap = {
       'Prototype Crescent',
     ],
     teams: [
-      ['Chasca', 'Bennett', 'Furina', 'Kazuha'],
-      ['Chasca', 'Xiangling', 'Bennett', 'Zhongli'],
-      ['Chasca', 'Fischl', 'Beidou', 'Jean'],
+      ['Chasca', 'Bennett', 'Furina', 'Xilonen'],
+      ['Chasca', 'Xiangling', 'Bennett', 'Kazuha'],
+      ['Chasca', 'Fischl', 'Furina', 'Jean'],
     ],
   },
   traveleranemo: {
@@ -1915,8 +1914,9 @@ export const characters: CharactersMap = {
       'White Tassel',
     ],
     teams: [
-      ['Cyno', 'Nahida', 'Baizhu', 'Furina'],
+      ['Cyno', 'Nahida', 'Furina', 'Baizhu'],
       ['Cyno', 'Fischl', 'Nahida', 'Kazuha'],
+      ['Cyno', 'Ororon', 'Nahida', 'Baizhu'],
     ],
   },
   yae: {
@@ -1953,6 +1953,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Yae Miko', 'Fischl', 'Nahida', 'Kazuha'],
       ['Yae Miko', 'Raiden Shogun', 'Sara', 'Kazuha'],
+      ['Yae Miko', 'Furina', 'Nahida', 'Kokomi'],
     ],
   },
   keqing: {
@@ -1987,6 +1988,7 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Keqing', 'Fischl', 'Nahida', 'Kazuha'],
+      ['Keqing', 'Furina', 'Fischl', 'Baizhu'],
       ['Keqing', 'Xingqiu', 'Bennett', 'Kazuha'],
     ],
   },
@@ -2021,9 +2023,9 @@ export const characters: CharactersMap = {
       'Favonius Lance',
     ],
     teams: [
-      ['Raiden Shogun', 'Bennett', 'Xiangling', 'Xingqiu'],
+      ['Raiden Shogun', 'Chevreuse', 'Bennett', 'Xiangling'],
+      ['Raiden Shogun', 'Furina', 'Xiangling', 'Bennett'],
       ['Raiden Shogun', 'Sara', 'Kazuha', 'Bennett'],
-      ['Raiden Shogun', 'Yelan', 'Xingqiu', 'Nahida'],
     ],
   },
 
@@ -2131,7 +2133,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Kuki Shinobu', 'Nahida', 'Xingqiu', 'Sucrose'],
-      ['Kuki Shinobu', 'Fischl', 'Furina', 'Kazuha'],
+      ['Kuki Shinobu', 'Alhaitham', 'Nahida', 'Xingqiu'],
+      ['Kuki Shinobu', 'Furina', 'Fischl', 'Kazuha'],
     ],
   },
   sara: {
@@ -2200,9 +2203,9 @@ export const characters: CharactersMap = {
       'Windblume Ode',
     ],
     teams: [
-      ['Fischl', 'Beidou', 'Xingqiu', 'Sucrose'],
       ['Fischl', 'Furina', 'Nahida', 'Kokomi'],
       ['Fischl', 'Cyno', 'Nahida', 'Kazuha'],
+      ['Fischl', 'Beidou', 'Xingqiu', 'Sucrose'],
     ],
   },
   beidou: {
@@ -2565,6 +2568,7 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Wriothesley', 'Furina', 'Shenhe', 'Kazuha'],
+      ['Wriothesley', 'Furina', 'Xilonen', 'Charlotte'],
       ['Wriothesley', 'Bennett', 'Xiangling', 'Kazuha'],
     ],
   },
@@ -2601,7 +2605,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Shenhe', 'Ayaka', 'Kokomi', 'Kazuha'],
       ['Shenhe', 'Ganyu', 'Kokomi', 'Venti'],
-      ['Shenhe', 'Wriothesley', 'Furina', 'Kazuha'],
+      ['Shenhe', 'Ayaka', 'Furina', 'Kazuha'],
     ],
   },
   ayaka: {
@@ -2637,7 +2641,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Ayaka', 'Shenhe', 'Kokomi', 'Kazuha'],
       ['Ayaka', 'Furina', 'Shenhe', 'Kazuha'],
-      ['Ayaka', 'Mona', 'Diona', 'Venti'],
+      ['Ayaka', 'Shenhe', 'Kokomi', 'Venti'],
     ],
   },
   eula: {
@@ -2709,7 +2713,7 @@ export const characters: CharactersMap = {
     teams: [
       ['Ganyu', 'Shenhe', 'Kokomi', 'Venti'],
       ['Ganyu', 'Bennett', 'Xiangling', 'Zhongli'],
-      ['Ganyu', 'Mona', 'Diona', 'Venti'],
+      ['Ganyu', 'Furina', 'Shenhe', 'Kazuha'],
     ],
   },
   qiqi: {
@@ -2779,7 +2783,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Charlotte', 'Wriothesley', 'Furina', 'Kazuha'],
-      ['Charlotte', 'Neuvillette', 'Furina', 'Kazuha'],
+      ['Charlotte', 'Neuvillette', 'Furina', 'Xilonen'],
+      ['Charlotte', 'Furina', 'Fischl', 'Nahida'],
     ],
   },
   freminet: {
@@ -2883,7 +2888,7 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Layla', 'Ayaka', 'Shenhe', 'Kazuha'],
-      ['Layla', 'Ganyu', 'Mona', 'Venti'],
+      ['Layla', 'Furina', 'Neuvillette', 'Kazuha'],
       ['Layla', 'Hu Tao', 'Xingqiu', 'Yelan'],
     ],
   },
@@ -3209,9 +3214,9 @@ export const characters: CharactersMap = {
       'Tidal Shadow',
     ],
     teams: [
+      ['Navia', 'Furina', 'Xilonen', 'Bennett'],
       ['Navia', 'Furina', 'Bennett', 'Xiangling'],
       ['Navia', 'Xingqiu', 'Yelan', 'Zhongli'],
-      ['Navia', 'Fischl', 'Beidou', 'Zhongli'],
     ],
   },
   chiori: {
@@ -3246,9 +3251,9 @@ export const characters: CharactersMap = {
       'Harbinger of Dawn',
     ],
     teams: [
-      ['Chiori', 'Navia', 'Furina', 'Zhongli'],
-      ['Chiori', 'Itto', 'Gorou', 'Zhongli'],
+      ['Chiori', 'Navia', 'Furina', 'Xilonen'],
       ['Chiori', 'Arlecchino', 'Zhongli', 'Yelan'],
+      ['Chiori', 'Itto', 'Gorou', 'Furina'],
     ],
   },
   itto: {
@@ -3281,8 +3286,9 @@ export const characters: CharactersMap = {
       'Whiteblind',
     ],
     teams: [
-      ['Itto', 'Gorou', 'Zhongli', 'Albedo'],
       ['Itto', 'Gorou', 'Chiori', 'Furina'],
+      ['Itto', 'Gorou', 'Zhongli', 'Albedo'],
+      ['Itto', 'Gorou', 'Chiori', 'Xilonen'],
     ],
   },
   albedo: {
@@ -3351,10 +3357,9 @@ export const characters: CharactersMap = {
       'Engulfing Lightning',
     ],
     teams: [
-      ['Zhongli', 'Hu Tao', 'Xingqiu', 'Albedo'],
-      ['Zhongli', 'Itto', 'Gorou', 'Albedo'],
-      ['Zhongli', 'Xiao', 'Albedo', 'Jean'],
+      ['Zhongli', 'Hu Tao', 'Xingqiu', 'Yelan'],
       ['Zhongli', 'Navia', 'Furina', 'Bennett'],
+      ['Zhongli', 'Arlecchino', 'Yelan', 'Chiori'],
     ],
   },
 
@@ -3643,6 +3648,7 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Emilie', 'Arlecchino', 'Bennett', 'Kazuha'],
+      ['Emilie', 'Kinich', 'Bennett', 'Xiangling'],
       ['Emilie', 'Neuvillette', 'Furina', 'Kazuha'],
     ],
   },
@@ -3677,6 +3683,7 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Kinich', 'Emilie', 'Bennett', 'Xiangling'],
+      ['Kinich', 'Mavuika', 'Bennett', 'Emilie'],
       ['Kinich', 'Furina', 'Baizhu', 'Fischl'],
     ],
   },
@@ -3713,8 +3720,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Alhaitham', 'Nahida', 'Kuki Shinobu', 'Xingqiu'],
+      ['Alhaitham', 'Furina', 'Kuki Shinobu', 'Xingqiu'],
       ['Alhaitham', 'Fischl', 'Xingqiu', 'Kazuha'],
-      ['Alhaitham', 'Furina', 'Kuki Shinobu', 'Kazuha'],
     ],
   },
   nahida: {
@@ -3748,10 +3755,9 @@ export const characters: CharactersMap = {
       'Magic Guide',
     ],
     teams: [
-      ['Nahida', 'Raiden Shogun', 'Xingqiu', 'Kuki Shinobu'],
       ['Nahida', 'Fischl', 'Xingqiu', 'Kuki Shinobu'],
-      ['Nahida', 'Nilou', 'Kokomi', 'Collei'],
-      ['Nahida', 'Cyno', 'Fischl', 'Kazuha'],
+      ['Nahida', 'Nilou', 'Kokomi', 'Yaoyao'],
+      ['Nahida', 'Raiden Shogun', 'Xingqiu', 'Kuki Shinobu'],
     ],
   },
   tighnari: {
@@ -3822,8 +3828,8 @@ export const characters: CharactersMap = {
     ],
     teams: [
       ['Baizhu', 'Neuvillette', 'Furina', 'Kazuha'],
+      ['Baizhu', 'Clorinde', 'Nahida', 'Furina'],
       ['Baizhu', 'Alhaitham', 'Fischl', 'Xingqiu'],
-      ['Baizhu', 'Nilou', 'Nahida', 'Kokomi'],
     ],
   },
 
