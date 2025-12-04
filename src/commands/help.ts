@@ -14,32 +14,32 @@ const generateHelpEmbed = (category) => {
       fields: [
         {
           name: 'Server & Notifications',
-          value: 'Server region and reset notifications',
+          value: 'Server region and reset reminders',
           inline: true,
         },
         {
-          name: 'Character Builds',
-          value: 'Browse characters and track builds',
+          name: 'Characters & Builds',
+          value: 'Browse, track, and view builds',
           inline: true,
         },
         {
-          name: 'Task Management',
-          value: 'Daily objectives and farming tasks',
+          name: 'Profile & Showcase',
+          value: 'View player profiles and stats',
           inline: true,
         },
         {
-          name: 'Domains & Resin',
-          value: 'Domain schedules and resin tracking',
+          name: 'Artifacts & Weapons',
+          value: 'Browse equipment database',
           inline: true,
         },
         {
-          name: 'All Commands',
-          value: 'Complete command reference',
+          name: 'Tasks & Farming',
+          value: 'To-do lists and domain schedules',
           inline: true,
         },
         {
           name: 'Quick Stats',
-          value: '`111 Characters` • `26 Commands`',
+          value: '`111 Characters` • `35 Commands`',
           inline: true,
         },
       ],
@@ -97,8 +97,8 @@ const generateHelpEmbed = (category) => {
 
     case 'builds':
       embed = createEmbed({
-        title: 'Character Builds',
-        description: 'Browse characters, view builds, and track progression',
+        title: 'Characters & Builds',
+        description: 'Browse characters, view builds, and track your progression',
         color: 0xFFA500,
         fields: [
           {
@@ -113,7 +113,7 @@ const generateHelpEmbed = (category) => {
           },
           {
             name: '/character build',
-            value: 'View build recommendations\nArtifacts, weapons, teams',
+            value: 'Build recommendations\nArtifacts, weapons, teams',
             inline: true,
           },
           {
@@ -143,13 +143,80 @@ const generateHelpEmbed = (category) => {
           },
         ],
       });
-      embed.setFooter({ text: '8 commands • Character Builds' });
+      embed.setFooter({ text: '8 commands • Characters & Builds' });
+      break;
+
+    case 'profile':
+      embed = createEmbed({
+        title: 'Profile & Showcase',
+        description: 'View player profiles and live character showcase data',
+        color: 0xE74C3C,
+        fields: [
+          {
+            name: '/profile view [uid]',
+            value: 'View player profile\nAR, achievements, abyss progress',
+            inline: true,
+          },
+          {
+            name: '/profile link <uid>',
+            value: 'Link your Genshin UID\nUse commands without typing UID',
+            inline: true,
+          },
+          {
+            name: '/profile unlink',
+            value: 'Unlink your Genshin UID',
+            inline: true,
+          },
+          {
+            name: '/showcase [uid]',
+            value: 'View character builds\nStats, talents, artifacts, CV',
+            inline: true,
+          },
+        ],
+      });
+      embed.setFooter({ text: '4 commands • Profile & Showcase • Live data from Enka.Network' });
+      break;
+
+    case 'equipment':
+      embed = createEmbed({
+        title: 'Artifacts & Weapons',
+        description: 'Browse the complete equipment database',
+        color: 0xF1C40F,
+        fields: [
+          {
+            name: '/artifacts view [uid]',
+            value: 'View equipped artifacts\nCV and substat analysis',
+            inline: true,
+          },
+          {
+            name: '/artifacts set <name>',
+            value: 'Artifact set info\n2pc and 4pc bonuses',
+            inline: true,
+          },
+          {
+            name: '/artifacts list',
+            value: 'Browse all artifact sets',
+            inline: true,
+          },
+          {
+            name: '/weapons search <name>',
+            value: 'Search weapon info\nStats and passive effects',
+            inline: true,
+          },
+          {
+            name: '/weapons list [type]',
+            value: 'Browse all weapons\nFilter by type or rarity',
+            inline: true,
+          },
+        ],
+      });
+      embed.setFooter({ text: '5 commands • Artifacts & Weapons • Data from Enka.Network' });
       break;
 
     case 'todo':
       embed = createEmbed({
-        title: 'Task Management',
-        description: 'Organize farming objectives and daily activities',
+        title: 'Tasks & Farming',
+        description: 'Manage to-do lists, domains, and resin',
         color: 0x9B59B6,
         fields: [
           {
@@ -172,17 +239,6 @@ const generateHelpEmbed = (category) => {
             value: 'Delete task permanently',
             inline: true,
           },
-        ],
-      });
-      embed.setFooter({ text: '4 commands • Task Management' });
-      break;
-
-    case 'domains':
-      embed = createEmbed({
-        title: 'Domains & Resin',
-        description: 'View domain schedules and track resin regeneration',
-        color: 0x3498DB,
-        fields: [
           {
             name: '/domain schedule',
             value: 'View today\'s domains\nBased on server region',
@@ -210,7 +266,7 @@ const generateHelpEmbed = (category) => {
           },
         ],
       });
-      embed.setFooter({ text: '5 commands • Domains & Resin' });
+      embed.setFooter({ text: '9 commands • Tasks & Farming' });
       break;
 
     case 'all':
@@ -225,18 +281,23 @@ const generateHelpEmbed = (category) => {
             inline: false,
           },
           {
-            name: 'Character Builds',
+            name: 'Characters & Builds',
             value: '`/list` `/character info` `/character build`\n`/character track` `/builds list` `/builds details`\n`/builds update` `/builds delete`',
             inline: false,
           },
           {
-            name: 'Task Management',
-            value: '`/todo add` `/todo list` `/todo complete` `/todo delete`',
+            name: 'Profile & Showcase',
+            value: '`/profile view` `/profile link` `/profile unlink` `/showcase`',
             inline: false,
           },
           {
-            name: 'Domains & Resin',
-            value: '`/domain schedule` `/domain search`\n`/resin check` `/resin set` `/resin use`',
+            name: 'Artifacts & Weapons',
+            value: '`/artifacts view` `/artifacts set` `/artifacts list`\n`/weapons search` `/weapons list`',
+            inline: false,
+          },
+          {
+            name: 'Tasks & Farming',
+            value: '`/todo add` `/todo list` `/todo complete` `/todo delete`\n`/domain schedule` `/domain search`\n`/resin check` `/resin set` `/resin use`',
             inline: false,
           },
           {
@@ -246,7 +307,7 @@ const generateHelpEmbed = (category) => {
           },
         ],
       });
-      embed.setFooter({ text: '26 commands total • Paimom v1.0' });
+      embed.setFooter({ text: '35 commands total • Paimom v1.0 • Some features use Enka.Network' });
       break;
   }
 
@@ -257,20 +318,19 @@ export default {
   data: new SlashCommandBuilder()
     .setName('help')
     .setDescription('View all available commands and features')
-    .addStringOption(option =>
+        .addStringOption(option =>
       option
         .setName('category')
         .setDescription('Choose a specific category')
         .addChoices(
           { name: 'Server & Notifications', value: 'server' },
-          { name: 'Character Builds', value: 'builds' },
-          { name: 'To-Do Lists', value: 'todo' },
-          { name: 'Domains & Resin', value: 'domains' },
+          { name: 'Characters & Builds', value: 'builds' },
+          { name: 'Profile & Showcase', value: 'profile' },
+          { name: 'Artifacts & Weapons', value: 'equipment' },
+          { name: 'Tasks & Farming', value: 'todo' },
           { name: 'All Commands', value: 'all' }
         )
-    ),
-
-  generateHelpEmbed, // Export the helper function
+    ),  generateHelpEmbed, // Export the helper function
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     const category = interaction.options.getString('category') || 'overview';
@@ -287,23 +347,28 @@ export default {
             value: 'server',
           },
           {
-            label: 'Character Builds',
+            label: 'Characters & Builds',
             description: '8 commands',
             value: 'builds',
           },
           {
-            label: 'Task Management',
+            label: 'Profile & Showcase',
             description: '4 commands',
+            value: 'profile',
+          },
+          {
+            label: 'Artifacts & Weapons',
+            description: '5 commands',
+            value: 'equipment',
+          },
+          {
+            label: 'Tasks & Farming',
+            description: '9 commands',
             value: 'todo',
           },
           {
-            label: 'Domains & Resin',
-            description: '5 commands',
-            value: 'domains',
-          },
-          {
             label: 'All Commands',
-            description: 'View all 26 commands',
+            description: 'View all 35 commands',
             value: 'all',
           },
         ]);

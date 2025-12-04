@@ -7,6 +7,7 @@ export type GenshinServer = 'asia' | 'na' | 'eu' | 'tw';
 // User attributes interface
 export interface UserAttributes {
   id: string; // Discord user ID
+  genshinUid: string | null; // Genshin Impact UID for Enka lookups
   genshinServer: GenshinServer;
   notificationsEnabled: boolean;
   dailyResetNotifications: boolean;
@@ -21,6 +22,7 @@ export interface UserAttributes {
 
 // Optional fields for creation (fields with defaults or auto-generated)
 export interface UserCreationAttributes extends Optional<UserAttributes, 
+  'genshinUid' |
   'genshinServer' | 
   'notificationsEnabled' | 
   'dailyResetNotifications' | 
@@ -33,6 +35,7 @@ export interface UserCreationAttributes extends Optional<UserAttributes,
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
   declare id: string;
+  declare genshinUid: string | null;
   declare genshinServer: GenshinServer;
   declare notificationsEnabled: boolean;
   declare dailyResetNotifications: boolean;
@@ -50,6 +53,11 @@ User.init({
     type: DataTypes.STRING,
     primaryKey: true,
     comment: 'Discord user ID',
+  },
+  genshinUid: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    comment: 'Genshin Impact UID for Enka.Network lookups',
   },
   genshinServer: {
     type: DataTypes.ENUM('asia', 'na', 'eu', 'tw'),

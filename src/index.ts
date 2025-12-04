@@ -8,6 +8,9 @@ import { syncDatabase } from './models/index.js';
 import logger from './utils/logger.js';
 import ReminderJob from './jobs/reminderJob.js';
 import ResetNotificationJob from './jobs/resetNotificationJob.js';
+import { initializeEnka, closeEnka, fetchUserProfile } from './services/enkaService.js';
+import { createCharacterEmbed } from './commands/showcase.js';
+import { createArtifactEmbed } from './commands/artifacts.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -97,6 +100,14 @@ client.once('ready', async () => {
     status: 'online',
   });
 
+  // Initialize Enka.Network client
+  try {
+    await initializeEnka();
+    logger.info('Enka.Network client initialized');
+  } catch (error) {
+    logger.error('Failed to initialize Enka.Network client:', error);
+  }
+
   const reminderJob = new ReminderJob(client);
   reminderJob.start();
 
@@ -135,23 +146,28 @@ client.on('interactionCreate', async (interaction) => {
                 value: 'server',
               },
               {
-                label: 'Character Builds',
+                label: 'Characters & Builds',
                 description: '8 commands',
                 value: 'builds',
               },
               {
-                label: 'Task Management',
+                label: 'Profile & Showcase',
                 description: '4 commands',
+                value: 'profile',
+              },
+              {
+                label: 'Artifacts & Weapons',
+                description: '5 commands',
+                value: 'equipment',
+              },
+              {
+                label: 'Tasks & Farming',
+                description: '9 commands',
                 value: 'todo',
               },
               {
-                label: 'Domains & Resin',
-                description: '5 commands',
-                value: 'domains',
-              },
-              {
                 label: 'All Commands',
-                description: 'View all 26 commands',
+                description: 'View all 35 commands',
                 value: 'all',
               },
             ]);
@@ -182,6 +198,42 @@ client.on('interactionCreate', async (interaction) => {
 
           const row = new ActionRowBuilder<ButtonBuilder>().addComponents(backButton);
           await interaction.update({ embeds: [embed], components: [row] });
+        }
+      }
+      
+      // Handle showcase character selection
+      if (interaction.customId.startsWith('showcase_select_')) {
+        const uid = interaction.customId.replace('showcase_select_', '');
+        const charIndex = parseInt(interaction.values[0], 10);
+        
+        await interaction.deferUpdate();
+        
+        try {
+          const profile = await fetchUserProfile(uid);
+          if (profile && profile.characters && profile.characters[charIndex]) {
+            const embed = createCharacterEmbed(profile.characters[charIndex], profile.nickname, uid);
+            await interaction.editReply({ embeds: [embed] });
+          }
+        } catch (error) {
+          logger.error('Error updating showcase:', error);
+        }
+      }
+      
+      // Handle artifacts character selection
+      if (interaction.customId.startsWith('artifacts_select_')) {
+        const uid = interaction.customId.replace('artifacts_select_', '');
+        const charIndex = parseInt(interaction.values[0], 10);
+        
+        await interaction.deferUpdate();
+        
+        try {
+          const profile = await fetchUserProfile(uid);
+          if (profile && profile.characters && profile.characters[charIndex]) {
+            const embed = createArtifactEmbed(profile.characters[charIndex], profile.nickname, uid);
+            await interaction.editReply({ embeds: [embed] });
+          }
+        } catch (error) {
+          logger.error('Error updating artifacts view:', error);
         }
       }
     } else if (interaction.isModalSubmit()) {
@@ -216,3 +268,20 @@ try {
   logger.error('Failed to start bot:', error);
   process.exit(1);
 }
+
+// Graceful shutdown
+process.on('SIGINT', () => {
+  logger.info('Shutting down...');
+  closeEnka();
+  client.destroy();
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('Shutting down...');
+  closeEnka();
+  client.destroy();
+  process.exit(0);
+});
+
+export { Command };
